@@ -1,0 +1,11 @@
+ion-toolbar {
+	--background: #000;
+}
+
+ion-split-pane {
+	--border:  0px;
+}
+
+ion-content {
+	--background: #000;
+}
