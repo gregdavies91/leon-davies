@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { IonGrid, IonRow, IonCol, IonModal, IonPopover, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent } from '@ionic/react';
+import { IonPopover, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent } from '@ionic/react';
 
 import './GalleryContainer.css';
 
@@ -125,15 +125,9 @@ const GalleryContainer: React.FC<ContainerProps> = ({ name }) => {
     <div className="gallery">
       {data.map((item, index)=>{
           return(
-            <IonGrid>
-              <IonRow>
-                <IonCol>
                   <div className="pics" key={index} onClick={()=> getImg(item.imgSrc)}>
                     <img src={item.imgSrc} style={{width: '100%'}} />
                   </div>
-                </IonCol>
-              </IonRow>
-            </IonGrid> 
           )
       })}
        
