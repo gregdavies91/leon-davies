@@ -1,22 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { IonGrid, IonRow, IonCol, IonImg, IonLabel, IonCard } from '@ionic/react';
 
-import './GalleryContainer.css';
+import Lightbox from 'react-image-lightbox';
 
-// import Img1 from '../assets/images/image1.jpg';
-// import Img2 from '../assets/images/image2.jpg';
-// import Img3 from '../assets/images/image3.jpg';
-// import Img4 from '../assets/images/image4.jpg';
-// import Img5 from '../assets/images/image5.jpg';
-// import Img6 from '../assets/images/image6.jpg';
-// import Img7 from '../assets/images/image7.jpg';
-// import Img8 from '../assets/images/image8.jpg';
-// import Img9 from '../assets/images/image9.jpg';
-// import Img10 from '../assets/images/image10.jpg';
-// import Img11 from '../assets/images/image11.jpg';
-// import Img12 from '../assets/images/image12.jpg';
-// import Img13 from '../assets/images/image13.jpg';
+import './GalleryContainer.css';
 
 type Item = {
   src: string;
@@ -34,16 +22,15 @@ const items2: Item[] = [
                       { src: '../assets/images/image6.jpg', text: 'image6' },
                       { src: '../assets/images/image7.jpg', text: 'image7' },
                       { src: '../assets/images/image8.jpg', text: 'image8' },
-                      { src: '../assets/images/image13.jpg', text: 'image13' }                      
+                      { src: '../assets/images/image13.jpg', text: 'image9' },                      
                       ];
 
 const items3: Item[] = [                      
-                      { src: '../assets/images/image9.jpg', text: 'image9' },
-                      { src: '../assets/images/image10.jpg', text: 'image10' },
-                      { src: '../assets/images/image11.jpg', text: 'image11' },
-                      { src: '../assets/images/image12.jpg', text: 'image12' },                      
-                      ];                      
-
+                      { src: '../assets/images/image9.jpg', text: 'image10' },
+                      { src: '../assets/images/image10.jpg', text: 'image11' },
+                      { src: '../assets/images/image11.jpg', text: 'image12' },
+                      { src: '../assets/images/image12.jpg', text: 'image13' },                      
+                      ];   
 
 export const GalleryContainer: React.FC = () => ( 
 
@@ -51,7 +38,9 @@ export const GalleryContainer: React.FC = () => (
         <IonRow>
           <IonCol size="12" size-lg="4">
             {items1.map((image, i) => (
-              <IonCard key={i}>
+              <IonCard size = 'cover'
+                       key={i}                 
+                       onClick={() => setShowLightbox({ showLightbox: true })}>
                 
                   <IonImg className="ion-img" src={image.src} alt={image.text} />
                 
@@ -79,6 +68,33 @@ export const GalleryContainer: React.FC = () => (
         </IonRow>
        </IonGrid>
 
-  );
+);
+
+function LightboxContainer() {
+    const [lightboxState, setShowLightbox] = useState({ showLightbox: false });
+
+    return (
+        <div>
+          
+          <Lightbox
+            mainSrc={image.src}
+            nextSrc={image[(i + 1) % image.length]}
+            prevSrc={image[(i + image.length - 1) % image.length]}
+            onCloseRequest={() => this.setState({ showLightbox: false })}
+            onMovePrevRequest={() =>
+              this.setState({
+                i: (i + image.length - 1) % image.length,
+              })
+            }
+            onMoveNextRequest={() =>
+              this.setState({
+                i: (i + 1) % image.length,
+              })
+            }
+          />
+          
+      </div>
+    )
+}
 
 export default GalleryContainer;
