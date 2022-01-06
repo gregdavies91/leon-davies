@@ -25,7 +25,7 @@ const Gallery: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         
-        <GalleryContainer name="">
+        <GalleryContainer>
         </GalleryContainer>
 
       </IonContent>
