@@ -1,7 +1,6 @@
-.image-container {
-	background-size: cover;
-	min-height: 200px;
-}
+/*.image-container {
+	
+}*/
 
 .gallery {
 	-webkit-column-count: 3;
@@ -11,6 +10,8 @@
 	-moz-column-width:  33%;
 	column-width:  33%;
 	padding:  0 12px;
+	background-size: cover;
+	min-height: 200px;
 }
 
 .gallery .pics {
@@ -18,6 +19,13 @@
 	transition: all 350ms ease;
 	cursor: pointer;
 	margin-bottom: 12px;
+	-moz-page-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  break-inside: avoid;
+  -o-column-break-inside: avoid;
+  -ms-column-break-inside: avoid;
+  column-break-inside: avoid;
+  page-break-inside: avoid;
 
 }
 
