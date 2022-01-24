@@ -29,14 +29,14 @@ const appPages: AppPage[] = [
     mdIcon: homeSharp
   },
   {
-    title: 'About',
-    url: '/About',
+    title: 'Art',
+    url: '/Art',
     iosIcon: colorPaletteSharp,
     mdIcon: colorPaletteSharp
   },
   {
-    title: 'Gallery',
-    url: '/Gallery',
+    title: 'Photos',
+    url: '/Photos',
     iosIcon: imageSharp,
     mdIcon: imageSharp
   },
