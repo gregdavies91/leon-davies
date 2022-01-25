@@ -1,7 +1,6 @@
 import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar, IonLabel, IonInput, IonButton, IonList } from '@ionic/react';
 import React, { useState } from 'react';
 import { useParams } from 'react-router';
-import LoginForm from '../components/LoginForm';
 import './Page.css';
 
 const Photos: React.FC = () => {
@@ -33,11 +32,7 @@ const Photos: React.FC = () => {
               <IonList>
                   <IonLabel>Password:</IonLabel>
                   <IonInput value={text} placeholder="Enter Input" onIonChange={e => setText(e.detail.value!)}></IonInput>
-                  <IonButton color="dark" 
-                      onClick={LoginForm}
-                  >
-                    Login
-                  </IonButton>
+                  <IonButton color="dark">Login</IonButton>
                   </IonList>
           </div>
           
